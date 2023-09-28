@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue'
 import type { ButtonProps } from './typing.ts'
 
-const Button = defineComponent(
-  (props: ButtonProps) => {
+const Button = defineComponent<ButtonProps>(
+  (props) => {
     return () => {
       return (
         <div>

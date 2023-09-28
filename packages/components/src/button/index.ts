@@ -1,5 +1,7 @@
 import { _withInstall } from '../_utils'
+import type { ButtonProps } from './typing'
 import Button from './button.tsx'
-export * from './typing.ts'
 
-export default _withInstall(Button)
+export default _withInstall<ButtonProps>(Button)
+
+export type { ButtonProps }

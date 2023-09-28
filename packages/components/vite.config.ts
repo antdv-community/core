@@ -10,6 +10,7 @@ export default defineConfig({
     vueJsx(),
     vueJsxProps(),
     dts({
+      entryRoot: 'src',
       outDir: ['es', 'lib']
     })
   ],
@@ -29,7 +30,8 @@ export default defineConfig({
           preserveModulesRoot: 'src',
           format: 'cjs',
           entryFileNames: '[name].js',
-          dir: 'lib'
+          dir: 'lib',
+          exports: 'named'
         }
       ]
     },
