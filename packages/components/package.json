@@ -1,0 +1,45 @@
+{
+  "name": "@antdv-plugins/core",
+  "version": "0.0.1",
+  "description": "this is antdv extra",
+  "type": "module",
+  "main": "es/index.js",
+  "types": "es/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "types": "./es/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./es/*": "./es/*",
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json",
+    "./*": "./*"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vite build",
+    "build:dist": "vite build --config vite-bundle.config.ts"
+  },
+  "keywords": [
+    "ant-design-vue",
+    "vue",
+    "vue-components",
+    "vue-plugins",
+    "antdv"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.0",
+    "@vueuse/core": "^10.4.1",
+    "ant-design-vue": "^4.0.3",
+    "vue": "^3.3.4"
+  }
+}

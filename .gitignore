@@ -1,0 +1,10 @@
+dist
+dist-ssr
+.cache
+node_modules
+.vscode
+.idea
+cache
+
+*.log
+*.local
