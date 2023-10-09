@@ -16,7 +16,7 @@ const Button = defineComponent<ButtonProps>(
   },
   {
     name: 'ApButton'
-  },
+  }
 )
 
 export default Button
