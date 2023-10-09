@@ -11,8 +11,8 @@ export default defineConfig({
     vueJsxProps(),
     dts({
       entryRoot: 'src',
-      outDir: ['es', 'lib']
-    })
+      outDir: ['es', 'lib'],
+    }),
   ],
   build: {
     rollupOptions: {
@@ -23,7 +23,7 @@ export default defineConfig({
           preserveModulesRoot: 'src',
           format: 'esm',
           entryFileNames: '[name].js',
-          dir: 'es'
+          dir: 'es',
         },
         {
           preserveModules: true,
@@ -31,12 +31,12 @@ export default defineConfig({
           format: 'cjs',
           entryFileNames: '[name].js',
           dir: 'lib',
-          exports: 'named'
-        }
-      ]
+          exports: 'named',
+        },
+      ],
     },
     lib: {
-      entry: 'src/index.ts'
-    }
-  }
+      entry: 'src/index.ts',
+    },
+  },
 })

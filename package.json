@@ -1,5 +1,4 @@
 {
-  "name": "core",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,19 +7,18 @@
     "dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "lint": "eslint packages --ext .ts,.tsx,.js,.jsx,.vue --fix"
+    "lint": "eslint packages --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@mistjs/eslint-config-vue-jsx": "^0.1.1",
+    "@mistjs/eslint-config": "^1.0.0-beta.2",
     "@rollup/plugin-typescript": "^11.1.4",
     "@types/node": "^20.7.1",
-    "@typescript-eslint/typescript-estree": "^6.7.3",
     "@vitejs/plugin-vue": "^4.3.4",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
-    "eslint": "^8.50.0",
+    "eslint": "^8.51.0",
     "prettier": "^3.0.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
@@ -30,10 +28,5 @@
     "vite-plugin-vitepress-demo": "^2.1.0",
     "vitepress": "1.0.0-rc.20",
     "vue": "^3.3.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "@typescript-eslint/typescript-estree": "^6.7.3"
-    }
   }
 }

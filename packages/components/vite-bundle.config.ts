@@ -7,11 +7,11 @@ export default defineConfig({
   plugins: [vue(), vueJsx(), vueJsxProps()],
   build: {
     rollupOptions: {
-      external: ['ant-design-vue', 'vue', '@ant-design/icons-vue']
+      external: ['ant-design-vue', 'vue', '@ant-design/icons-vue'],
     },
     lib: {
       entry: 'src/index.ts',
-      formats: ['umd', 'es', 'cjs']
-    }
-  }
+      formats: ['umd', 'es', 'cjs'],
+    },
+  },
 })

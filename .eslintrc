@@ -1,8 +1,0 @@
-{
-  "extends": ["@mistjs/eslint-config-vue-jsx"],
-  "rules": {
-    "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/import": "off",
-    "@typescript-eslint/no-redeclare": "off"
-  }
-}

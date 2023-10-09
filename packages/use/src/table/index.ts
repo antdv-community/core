@@ -1,7 +1,8 @@
 import { ref } from 'vue'
-export const useTable = () => {
+
+export function useTable() {
   const tableRef = ref(null)
   return {
-    tableRef
+    tableRef,
   }
 }

@@ -7,10 +7,9 @@ export default {
   install(app) {
     for (const componentsKey in components) {
       const comp = (components as Record<string, any>)[componentsKey]
-      if (comp.install) {
+      if (comp.install)
         app.use(comp)
-      }
     }
   },
-  version: pkg.version
+  version: pkg.version,
 } as Plugin

@@ -6,5 +6,5 @@ export default defineConfig({
   entry: ['src/**/*.ts'],
   shims: true,
   splitting: true,
-  dts: true
+  dts: true,
 })
