@@ -10,6 +10,10 @@ export const getSideBar = (): DefaultTheme.Sidebar => {
       {
         text: '按钮',
         link: '/components/button/'
+      },
+      {
+        text: '图标选择器',
+        link: '/components/iconPicker/'
       }
     ]
   }
