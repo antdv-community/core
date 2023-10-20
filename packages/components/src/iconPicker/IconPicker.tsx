@@ -23,10 +23,13 @@ export default defineComponent({
     const current = ref(1)
     const iconfonts = reactive(['github', 'facebook', 'twitter', 'qq', 'weibo'])
     const iconsTotal = ref()
+    const defaultPageSize = 50
     const { styles } = useStyles()
 
     const filterIcons = computed(() => {
-      return props.icons.slice(0, 50)
+      const startIcon = (current.value - 1) * defaultPageSize
+      const endIcon = startIcon + defaultPageSize
+      return props.icons.slice(startIcon, endIcon)
     })
     const selectIcon = (name: string) => {
       switch (activeKey.value) {
@@ -59,7 +62,9 @@ export default defineComponent({
                 {
                   iconfonts.map(item => (
                     <li onClick={() => (currentSelect.value = item)}>
-                      <IconFont name={item} />
+                      <Tooltip title={item}>
+                        <IconFont name={item} />
+                      </Tooltip>
                     </li>
                   ))
                 }
@@ -69,7 +74,7 @@ export default defineComponent({
               计划中...
             </TabPane>
           </Tabs>
-          <Pagination v-model:current={current.value} total={iconsTotal.value} />
+          <Pagination v-model:current={current.value} total={iconsTotal.value} defaultPageSize={defaultPageSize} hideOnSinglePage showSizeChanger={false} size={'small'} />
         </>
       ),
       default: () =>
@@ -81,7 +86,7 @@ export default defineComponent({
     }
     watch(activeKey, (newValue) => {
       if (newValue === '1') {
-        iconsTotal.value = filterIcons.value.length
+        iconsTotal.value = props.icons.length
       } else if (newValue === '2') {
         iconsTotal.value = iconfonts.values.length
       } else {
@@ -89,7 +94,7 @@ export default defineComponent({
       }
     })
     onMounted(() => {
-      iconsTotal.value = filterIcons.value.length
+      iconsTotal.value = props.icons.length
     })
     return () => {
       return (
