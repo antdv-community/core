@@ -4,7 +4,9 @@ import { Input, Pagination, Popover, TabPane, Tabs, Tooltip } from 'ant-design-v
 import { SelectOutlined } from '@ant-design/icons-vue'
 import { Icon } from './Icon'
 import { IconFont } from './IconFont'
+import { IconIfy } from './IconIfy'
 import { useStyles } from './style'
+import defaultIcons from './data/ant-design-icons-vue'
 
 const iconPickerProps = {
   value: String,
@@ -16,12 +18,13 @@ export type IconPickerProps = Partial<
 export default defineComponent({
   name: 'IconPicker',
   props: iconPickerProps,
-  setup(props) {
+  setup() {
     const currentSelect = ref()
     const isOpen = ref(false)
     const activeKey = ref('1')
     const current = ref(1)
     const iconfonts = reactive(['github', 'facebook', 'twitter', 'qq', 'weibo'])
+    const iconifys = reactive(['mdi:account-alert', 'mdi:account-card-outline', 'mdi:account-child-circle', 'mdi:yin-yang', 'mdi:yoga'])
     const iconsTotal = ref()
     const defaultPageSize = 50
     const { styles } = useStyles()
@@ -29,12 +32,14 @@ export default defineComponent({
     const filterIcons = computed(() => {
       const startIcon = (current.value - 1) * defaultPageSize
       const endIcon = startIcon + defaultPageSize
-      return props.icons.slice(startIcon, endIcon)
+      return defaultIcons.icons.slice(startIcon, endIcon)
     })
     const selectIcon = (name: string) => {
       switch (activeKey.value) {
         case '2':
           return <IconFont name={name} />;
+        case '3':
+          return <IconIfy name={name} />;
         default:
           return <Icon name={name} />;
       }
@@ -48,11 +53,11 @@ export default defineComponent({
               <ul class={styles.value.list}>
                 {filterIcons.value.map(item => {
                   return (
-                    <li onClick={() => (currentSelect.value = item)}>
-                      <Tooltip title={item}>
+                    <Tooltip title={item}>
+                      <li onClick={() => (currentSelect.value = item)}>
                         <Icon name={item} />
-                      </Tooltip>
-                    </li>
+                      </li>
+                    </Tooltip>
                   )
                 })}
               </ul>
@@ -61,17 +66,27 @@ export default defineComponent({
               <ul class={styles.value.list}>
                 {
                   iconfonts.map(item => (
-                    <li onClick={() => (currentSelect.value = item)}>
-                      <Tooltip title={item}>
+                    <Tooltip title={item}>
+                      <li onClick={() => (currentSelect.value = item)}>
                         <IconFont name={item} />
-                      </Tooltip>
-                    </li>
+                      </li>
+                    </Tooltip>
                   ))
                 }
               </ul>
             </TabPane>
             <TabPane key="3" tab="iconify">
-              计划中...
+              <ul class={styles.value.list}>
+                {
+                  iconifys.map(item => (
+                    <Tooltip title={item}>
+                      <li onClick={() => (currentSelect.value = item)}>
+                        <IconIfy name={item} />
+                      </li>
+                    </Tooltip>
+                  ))
+                }
+              </ul>
             </TabPane>
           </Tabs>
           <Pagination v-model:current={current.value} total={iconsTotal.value} defaultPageSize={defaultPageSize} hideOnSinglePage showSizeChanger={false} size={'small'} />
@@ -86,15 +101,15 @@ export default defineComponent({
     }
     watch(activeKey, (newValue) => {
       if (newValue === '1') {
-        iconsTotal.value = props.icons.length
+        iconsTotal.value = defaultIcons.icons.length
       } else if (newValue === '2') {
-        iconsTotal.value = iconfonts.values.length
+        iconsTotal.value = iconfonts.length
       } else {
-        iconsTotal.value = 0
+        iconsTotal.value = iconifys.length
       }
     })
     onMounted(() => {
-      iconsTotal.value = props.icons.length
+      iconsTotal.value = defaultIcons.icons.length
     })
     return () => {
       return (

@@ -1,7 +1,6 @@
 import { createStyles } from 'antdv-style'
 
 export const useStyles = createStyles(({ token, css }) => {
-  console.log(token)
   return {
       list: css({
           display: 'flex',

@@ -9,13 +9,12 @@ title: 基本
 <script setup lang="ts">
 import { ref } from 'vue'
 import { ApIconPicker } from '@antdv-plugins/core'
-import icons from '../../data/ant-design-icons-vue'
 const pickerValue = ref()
 </script>
 
 <template>
   <div style="width: 50%">
-    <ApIconPicker v-model:value="pickerValue" :icons="icons.icons" />
+    <ApIconPicker v-model:value="pickerValue" />
   </div>
 </template>
 
