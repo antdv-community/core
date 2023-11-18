@@ -1,7 +1,7 @@
 {
   "name": "@antdv-plugins/core",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is antdv extra",
   "author": "",
   "license": "MIT",
@@ -12,6 +12,11 @@
     "vue-plugins",
     "antdv"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antdv-community/core.git"
+  },
+  "homepage": "https://github.com/antdv-community/core.git",
   "exports": {
     ".": {
       "types": "./es/index.d.ts",

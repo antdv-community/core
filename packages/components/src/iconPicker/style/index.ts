@@ -15,6 +15,7 @@ export const useStyles = createStyles(({ token, css }) => {
             width: '20%',
             textAlign: 'center',
             color: `${token.colorIcon}`,
+            listStyle: 'none',
             '&:hover': {
               color: `${token.colorIconHover}`,
               backgroundColor: `${token.colorBgTextActive}`,

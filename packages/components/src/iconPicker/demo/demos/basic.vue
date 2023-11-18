@@ -17,5 +17,3 @@ const pickerValue = ref()
     <ApIconPicker v-model:value="pickerValue" />
   </div>
 </template>
-
-<style scoped></style>
