@@ -50,7 +50,7 @@ pnpm add @antdv-plugins/core
 ```jsx
 <script setup>
 import { ref } from 'vue';
-import { ApIconPicker } from 'antd';
+import { ApIconPicker } from '@antdv-plugins/core';
 
 const pickerValue = ref(null)
 </script>

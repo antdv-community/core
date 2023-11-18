@@ -1,7 +1,7 @@
 {
   "name": "@antdv-plugins/core",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "this is antdv extra",
   "author": "",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/antdv-community/core.git"
   },
-  "homepage": "https://github.com/antdv-community/core.git",
+  "homepage": "https://github.com/antdv-community/core",
   "exports": {
     ".": {
       "types": "./es/index.d.ts",
