@@ -14,6 +14,10 @@ export const getSideBar = (): DefaultTheme.Sidebar => {
       {
         text: '图标选择器',
         link: '/components/iconPicker/'
+      },
+      {
+        text: '通知栏',
+        link: '/components/noticeBar/'
       }
     ]
   }

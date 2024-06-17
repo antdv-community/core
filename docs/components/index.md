@@ -5,3 +5,4 @@
 ## 组件列表
 
 ✅ [IconPicker/图标选择器](/components/icon-picker/)
+✅ [NoticeBar/通知栏](/components/notice-bar/)

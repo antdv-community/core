@@ -3,3 +3,5 @@ export type { ButtonProps } from './button'
 
 export { default as ApIconPicker, Icon } from './iconPicker'
 export type { IconProps, IconPickerProps } from './iconPicker'
+
+export { default as ApNoticeBar } from './noticeBar'
